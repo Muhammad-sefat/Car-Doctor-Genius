@@ -27,6 +27,10 @@ const Services = () => {
           <SingleService key={data._id} data={data}></SingleService>
         ))}
       </div>
+
+      <p className="border border-red-600 p-3 rounded-md my-8 w-1/6 mx-auto text-red-600 font-medium">
+        More Services
+      </p>
     </div>
   );
 };
