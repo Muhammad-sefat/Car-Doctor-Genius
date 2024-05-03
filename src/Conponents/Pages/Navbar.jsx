@@ -1,28 +1,42 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
-
-const newLink = (
-  <>
-    <li>
-      <Link to={"/"}>Home</Link>
-    </li>
-    <li>
-      <Link to={"/about"}>About</Link>
-    </li>
-    <li>
-      <Link to={"/services"}>Services</Link>
-    </li>
-    <li>
-      <Link to={"/blog"}>Blog</Link>
-    </li>
-    <li>
-      <Link to={"/contact"}>Contact</Link>
-    </li>
-  </>
-);
+import { AuthContext } from "../AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const logOutBtn = () => {
+    logOut().then(() => {
+      alert("Log Out SuccessFull");
+    });
+  };
+
+  const newLink = (
+    <>
+      <li>
+        <Link to={"/"}>Home</Link>
+      </li>
+      <li>
+        <Link to={"/about"}>About</Link>
+      </li>
+      <li>
+        <Link to={"/services"}>Services</Link>
+      </li>
+      <li>
+        <Link to={"/blog"}>Blog</Link>
+      </li>
+      {user ? (
+        <li>
+          <a onClick={logOutBtn}>LogOut</a>
+        </li>
+      ) : (
+        <li>
+          <Link to={"/login"}>Login</Link>
+        </li>
+      )}
+    </>
+  );
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -59,7 +73,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{newLink}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Appoinment</a>
+          <a className="btn bg-red-600 text-white">Appoinment</a>
         </div>
       </div>
     </div>
