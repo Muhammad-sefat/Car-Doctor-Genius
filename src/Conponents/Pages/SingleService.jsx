@@ -1,7 +1,8 @@
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const SingleService = ({ data }) => {
-  const { img, title, price } = data;
+  const { img, title, price, _id } = data;
   return (
     <div>
       <div className="card bg-base-100 shadow-xl">
@@ -14,9 +15,12 @@ const SingleService = ({ data }) => {
             <p className="text-red-600 py-4 text-lg font-medium">
               Price : {price}
             </p>
-            <span className="text-red-600 text-lg">
-              <FaArrowRightLong />
-            </span>
+            <Link to={`/productDetails/${_id}`}>
+              {" "}
+              <span className="text-red-600 text-lg">
+                <FaArrowRightLong />
+              </span>
+            </Link>
           </div>
         </div>
       </div>

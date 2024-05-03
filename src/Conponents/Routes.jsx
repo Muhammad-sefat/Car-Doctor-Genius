@@ -4,6 +4,8 @@ import Home from "./Pages/Home";
 import ErrorPage from "./ErrorPage";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import ProductDetails from "./Pages/ProductDetails";
+import ConfirmOrder from "./Pages/ConfirmOrder";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,16 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/productDetails/:id",
+        element: <ProductDetails></ProductDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/service/${params.id}`),
+      },
+      {
+        path: "/confirmOrder",
+        element: <ConfirmOrder></ConfirmOrder>,
       },
     ],
   },
