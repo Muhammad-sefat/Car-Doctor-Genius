@@ -2,7 +2,6 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const ProductDetails = () => {
   const { img, price, title, description } = useLoaderData();
-  console.log(img, price);
   return (
     <div>
       <section className="dark:bg-gray-100 dark:text-gray-800">
