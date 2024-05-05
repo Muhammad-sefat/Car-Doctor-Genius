@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider";
 import axios from "axios";
 
@@ -14,9 +14,12 @@ const ConfirmOrder = () => {
     const date = form.date.value;
     const photo = form.photo.value;
     const newBooking = { name, email, price, date, photo };
+    console.log(newBooking);
 
     axios.post("http://localhost:5000/booking", { newBooking }).then((res) => {
-      console.log(res.data);
+      if (res.data.insertedId) {
+        alert("Order Successfull");
+      }
     });
   };
   return (
@@ -53,8 +56,8 @@ const ConfirmOrder = () => {
                   id="email"
                   type="email"
                   name="email"
-                  placeholder={user?.email}
-                  required=""
+                  defaultValue={user?.email}
+                  readOnly
                   className="block w-full border p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100"
                 />
               </div>
