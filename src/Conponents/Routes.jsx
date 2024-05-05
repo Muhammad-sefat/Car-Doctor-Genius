@@ -7,6 +7,7 @@ import Register from "./Pages/Register";
 import ProductDetails from "./Pages/ProductDetails";
 import ConfirmOrder from "./Pages/ConfirmOrder";
 import PrivateRoute from "./Pages/PrivateRoute";
+import MyBooking from "./Pages/MyBooking";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
             <ConfirmOrder></ConfirmOrder>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/mybooking",
+        element: <MyBooking></MyBooking>,
       },
     ],
   },

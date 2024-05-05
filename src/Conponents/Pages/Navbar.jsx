@@ -23,9 +23,13 @@ const Navbar = () => {
       <li>
         <Link to={"/services"}>Services</Link>
       </li>
-      <li>
-        <Link to={"/blog"}>Blog</Link>
-      </li>
+      {user ? (
+        <li>
+          <Link to={"/mybooking"}>MyBooking</Link>
+        </li>
+      ) : (
+        ""
+      )}
       {user ? (
         <li>
           <a onClick={logOutBtn}>LogOut</a>
