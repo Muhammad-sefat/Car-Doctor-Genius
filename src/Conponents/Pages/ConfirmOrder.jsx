@@ -14,7 +14,6 @@ const ConfirmOrder = () => {
     const date = form.date.value;
     const photo = form.photo.value;
     const newBooking = { name, email, price, date, photo };
-    console.log(newBooking);
 
     axios.post("http://localhost:5000/booking", { newBooking }).then((res) => {
       if (res.data.insertedId) {

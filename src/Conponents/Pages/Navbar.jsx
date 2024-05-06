@@ -1,13 +1,29 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { AuthContext } from "../AuthProvider";
+import axios from "axios";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const userEmail = user?.email;
+  const loggeduser = { userEmail };
+  const navigate = useNavigate();
   const logOutBtn = () => {
     logOut().then(() => {
       alert("Log Out SuccessFull");
+      navigate("/login");
+
+      // data call
+      axios
+        .patch(
+          "http://localhost:5000/logout",
+          { loggeduser },
+          { withCredentials: true }
+        )
+        .then((res) => {
+          console.log(res.data);
+        });
     });
   };
 
@@ -23,16 +39,14 @@ const Navbar = () => {
         <Link to={"/services"}>Services</Link>
       </li>
       {user ? (
-        <li>
-          <Link to={"/mybooking"}>MyBooking</Link>
-        </li>
-      ) : (
-        ""
-      )}
-      {user ? (
-        <li>
-          <a onClick={logOutBtn}>LogOut</a>
-        </li>
+        <div className="flex items-center">
+          <li>
+            <Link to={"/mybooking"}>MyBooking</Link>
+          </li>
+          <li>
+            <a onClick={logOutBtn}>LogOut</a>
+          </li>
+        </div>
       ) : (
         <li>
           <Link to={"/login"}>Login</Link>

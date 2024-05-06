@@ -21,7 +21,7 @@ const Login = () => {
         const user = { LoggedUser };
         axios
           .post(
-            `http://localhost:5000/jwt`,
+            "http://localhost:5000/jwt",
             { user },
             { withCredentials: true }
           )
