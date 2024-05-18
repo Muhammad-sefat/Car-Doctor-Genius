@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import SingleService from "./SingleService";
 
 const Services = () => {
+  const [ascen, setAscen] = useState(true);
   const [service, setService] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/service")
@@ -22,6 +23,9 @@ const Services = () => {
         the majority have suffered alteration in some form, by injected humour,
         or randomised words which don't look even slightly believable.{" "}
       </p>
+      <button onClick={() => setAscen(!ascen)} className="btn btn-secondary">
+        {ascen ? "Price : High to Low" : "Price : Low to High"}
+      </button>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {service.map((data) => (
           <SingleService key={data._id} data={data}></SingleService>
