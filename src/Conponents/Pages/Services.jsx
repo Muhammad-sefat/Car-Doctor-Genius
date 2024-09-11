@@ -5,7 +5,7 @@ const Services = () => {
   const [ascen, setAscen] = useState(true);
   const [service, setService] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/service")
+    fetch(`http://localhost:5000/service?sort=${ascen ? "ascen" : "desen"}`)
       .then((res) => res.json())
       .then((data) => {
         setService(data);
@@ -13,7 +13,7 @@ const Services = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [ascen]);
   return (
     <div className="my-8">
       <h2 className="text-4xl font-bold text-red-600 py-4 text-center">

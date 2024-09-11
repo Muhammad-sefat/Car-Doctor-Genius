@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { AuthContext } from "../AuthProvider";
 import axios from "axios";
@@ -30,18 +30,18 @@ const Navbar = () => {
   const newLink = (
     <>
       <li>
-        <Link to={"/"}>Home</Link>
+        <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
-        <Link to={"/about"}>About</Link>
+        <NavLink to={"/about"}>About</NavLink>
       </li>
       <li>
-        <Link to={"/services"}>Services</Link>
+        <NavLink to={"/services"}>Services</NavLink>
       </li>
       {user ? (
         <div className="flex items-center">
           <li>
-            <Link to={"/mybooking"}>MyBooking</Link>
+            <NavLink to={"/mybooking"}>MyBooking</NavLink>
           </li>
           <li>
             <a onClick={logOutBtn}>LogOut</a>
@@ -49,14 +49,14 @@ const Navbar = () => {
         </div>
       ) : (
         <li>
-          <Link to={"/login"}>Login</Link>
+          <NavLink to={"/login"}>Login</NavLink>
         </li>
       )}
     </>
   );
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-200 p-3 rounded">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -83,11 +83,13 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to={"/"} className="btn btn-ghost text-xl">
-            <img src={logo} />
+            <img className="w-[70%]" src={logo} />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{newLink}</ul>
+          <ul className="menu menu-horizontal px-1 font-semibold space-x-2">
+            {newLink}
+          </ul>
         </div>
         <div className="navbar-end">
           <a className="btn bg-red-600 text-white">Appoinment</a>
