@@ -38,7 +38,7 @@ const Services = () => {
         ))}
       </div>
 
-      <p className="border-2 border-red-600 p-3 rounded-md my-8 w-1/6 mx-auto text-red-600 text-xl font-medium">
+      <p className="hover:scale-110 hover:transition-transform hover:duration-300 border-2 border-red-600 p-3 rounded-md my-8 w-1/6 mx-auto text-red-600 text-xl font-medium">
         More Services
       </p>
     </div>

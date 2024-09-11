@@ -10,7 +10,7 @@ const Team = () => {
             <h3 className="text-2xl font-bold leading-none sm:text-5xl text-red-500">
               Meet our team
             </h3>
-            <p className="max-w-2xl mx-auto dark:text-gray-600 text-gray-700 font-medium">
+            <p className="max-w-4xl mx-auto dark:text-gray-600 text-gray-700 font-medium pt-3">
               At the heart of our success is a diverse and talented team of
               professionals. Each member brings unique skills and perspectives,
               working together to deliver innovative solutions and drive our
