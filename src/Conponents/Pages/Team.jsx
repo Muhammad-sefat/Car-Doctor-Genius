@@ -18,7 +18,7 @@ const Team = () => {
             </p>
           </div>
           <div className="grid w-full grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="space-y-4">
+            <div className="space-y-4 border p-4 rounded hover:scale-110  hover:transition-transform hover:duration-300">
               <img
                 alt=""
                 className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
@@ -26,13 +26,15 @@ const Team = () => {
               />
               <div className="flex flex-col items-center">
                 <h4 className="text-xl font-semibold">Car Engine Plug</h4>
-                <p className="text-lg dark:text-gray-600">Engineer Expart</p>
-                <div className="flex mt-2 space-x-3">
+                <p className="text-lg dark:text-gray-600 text-orange-700">
+                  Engineer Expart
+                </p>
+                <div className="flex mt-4 space-x-5">
                   <a
                     rel="noopener noreferrer"
                     href="#"
                     title="Twitter"
-                    className="dark:text-gray-600"
+                    className="border-2 p-3 rounded-full hover:bg-gray-300"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +49,7 @@ const Team = () => {
                     rel="noopener noreferrer"
                     href="#"
                     title="LinkedIn"
-                    className="dark:text-gray-600"
+                    className="border-2 p-3 rounded-full hover:bg-gray-300"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +64,7 @@ const Team = () => {
                     rel="noopener noreferrer"
                     href="#"
                     title="GitHub"
-                    className="dark:text-gray-600"
+                    className="border-2 p-3 rounded-full hover:bg-gray-300"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +78,7 @@ const Team = () => {
                 </div>
               </div>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 border p-4 rounded hover:scale-110  hover:transition-transform hover:duration-300">
               <img
                 alt=""
                 className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
@@ -84,13 +86,15 @@ const Team = () => {
               />
               <div className="flex flex-col items-center">
                 <h4 className="text-xl font-semibold">Bike Engine Plug</h4>
-                <p className="text-lg dark:text-gray-600">Engine Expert</p>
+                <p className="text-lg dark:text-gray-600 text-orange-700">
+                  Engine Expert
+                </p>
                 <div className="flex mt-2 space-x-3">
                   <a
                     rel="noopener noreferrer"
                     href="#"
                     title="Twitter"
-                    className="dark:text-gray-600"
+                    className="border-2 p-3 rounded-full hover:bg-gray-300"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +109,7 @@ const Team = () => {
                     rel="noopener noreferrer"
                     href="#"
                     title="LinkedIn"
-                    className="dark:text-gray-600"
+                    className="border-2 p-3 rounded-full hover:bg-gray-300"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +124,7 @@ const Team = () => {
                     rel="noopener noreferrer"
                     href="#"
                     title="GitHub"
-                    className="dark:text-gray-600"
+                    className="border-2 p-3 rounded-full hover:bg-gray-300"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +138,7 @@ const Team = () => {
                 </div>
               </div>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 border p-4 rounded hover:scale-110  hover:transition-transform hover:duration-300">
               <img
                 alt=""
                 className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
@@ -142,13 +146,15 @@ const Team = () => {
               />
               <div className="flex flex-col items-center">
                 <h4 className="text-xl font-semibold">Bus Engine Plug</h4>
-                <p className="text-lg dark:text-gray-600">Engine Expert</p>
+                <p className="text-lg dark:text-gray-600 text-orange-700">
+                  Engine Expert
+                </p>
                 <div className="flex mt-2 space-x-3">
                   <a
                     rel="noopener noreferrer"
                     href="#"
                     title="Twitter"
-                    className="dark:text-gray-600"
+                    className="border-2 p-3 rounded-full hover:bg-gray-300"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +169,7 @@ const Team = () => {
                     rel="noopener noreferrer"
                     href="#"
                     title="LinkedIn"
-                    className="dark:text-gray-600"
+                    className="border-2 p-3 rounded-full hover:bg-gray-300"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -178,7 +184,7 @@ const Team = () => {
                     rel="noopener noreferrer"
                     href="#"
                     title="GitHub"
-                    className="dark:text-gray-600"
+                    className="border-2 p-3 rounded-full hover:bg-gray-300"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
