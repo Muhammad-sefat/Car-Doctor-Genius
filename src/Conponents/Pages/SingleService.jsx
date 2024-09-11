@@ -5,7 +5,7 @@ const SingleService = ({ data }) => {
   const { img, title, price, _id } = data;
   return (
     <div>
-      <div className="card bg-base-100 shadow-xl">
+      <div className="card bg-base-100 shadow-xl h-full">
         <figure>
           <img src={img} alt="Image" />
         </figure>

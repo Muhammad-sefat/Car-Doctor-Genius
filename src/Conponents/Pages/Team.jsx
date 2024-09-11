@@ -10,10 +10,11 @@ const Team = () => {
             <h3 className="text-2xl font-bold leading-none sm:text-5xl text-red-500">
               Meet our team
             </h3>
-            <p className="max-w-2xl mx-auto dark:text-gray-600">
-              At a assumenda quas cum earum ut itaque commodi saepe rem
-              aspernatur quam natus quis nihil quod, hic explicabo doloribus
-              magnam neque, exercitationem eius sunt!
+            <p className="max-w-2xl mx-auto dark:text-gray-600 text-gray-700 font-medium">
+              At the heart of our success is a diverse and talented team of
+              professionals. Each member brings unique skills and perspectives,
+              working together to deliver innovative solutions and drive our
+              mission forward.
             </p>
           </div>
           <div className="grid w-full grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
