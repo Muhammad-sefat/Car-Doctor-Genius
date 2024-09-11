@@ -17,7 +17,7 @@ const Team = () => {
               mission forward.
             </p>
           </div>
-          <div className="grid w-full grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid w-full gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
             <div className="space-y-4 border p-4 rounded hover:scale-110  hover:transition-transform hover:duration-300">
               <img
                 alt=""
