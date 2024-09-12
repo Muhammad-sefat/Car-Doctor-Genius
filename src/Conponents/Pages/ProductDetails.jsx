@@ -6,7 +6,11 @@ const ProductDetails = () => {
   const { img, price, title, description } = useLoaderData();
   return (
     <div>
-      <CommonSlide logo={logo} text={"Home/Service Details"} />
+      <CommonSlide
+        logo={logo}
+        font={"Produt Details"}
+        text={"Home/Service Details"}
+      />
       <section className="dark:bg-gray-100 dark:text-gray-800">
         <div className="container flex flex-col justify-center items-center p-6 mx-auto lg:flex-row lg:justify-between">
           <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
