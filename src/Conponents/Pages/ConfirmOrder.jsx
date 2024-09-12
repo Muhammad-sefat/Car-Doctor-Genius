@@ -1,9 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../AuthProvider";
 import axios from "axios";
 
 const ConfirmOrder = () => {
   const { user } = useContext(AuthContext);
+  console.log(user);
 
   const handleBookingOrder = (e) => {
     e.preventDefault();
