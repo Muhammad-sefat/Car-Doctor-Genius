@@ -1,4 +1,58 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
+import { RiDoubleQuotesR } from "react-icons/ri";
+import Rating from "react-rating";
+
 const Testimonial = () => {
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const { data } = await axios.get("http://localhost:5000/reviews");
+      setReviews(data);
+    };
+    getData();
+  }, []);
+
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <div>
       <section className="my-8 dark:bg-gray-100 dark:text-gray-800">
@@ -6,90 +60,48 @@ const Testimonial = () => {
           <h1 className="p-4 text-4xl font-semibold leading-none text-center">
             What Customer Says
           </h1>
-          <p className="p-5 md:w-[70%] mx-auto">
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even slightly
-            believable.{" "}
+          <p className="p-5 md:w-[70%] mx-auto pb-5 text-gray-700 font-medium text-base">
+            We are committed to fostering a collaborative environment where
+            creativity thrives, and our collective expertise ensures the highest
+            quality in everything we do.
           </p>
-        </div>
-        <div className="container flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10">
-          <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
-            <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-50">
-              <p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-800">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  fill="currentColor"
-                  className="w-8 h-8 dark:text-violet-600"
-                >
-                  <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-                  <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-                </svg>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour, or randomised words which don't look even
-                slightly believable.
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  fill="currentColor"
-                  className="absolute right-0 w-8 h-8 dark:text-violet-600"
-                >
-                  <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
-                  <path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
-                </svg>
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center p-8 rounded-b-lg dark:bg-violet-600 dark:text-gray-50">
-              <img
-                src="https://source.unsplash.com/50x50/?portrait?1"
-                alt=""
-                className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full dark:bg-gray-500 dark:bg-gray-300"
-              />
-              <p className="text-xl font-semibold leading-tight text-red-500">
-                Tim Holand Davide
-              </p>
-              <p className="text-sm uppercase">Softwere Enginner</p>
-            </div>
-          </div>
-          <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
-            <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-50">
-              <p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-800">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  fill="currentColor"
-                  className="w-8 h-8 dark:text-violet-600"
-                >
-                  <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-                  <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-                </svg>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour, or randomised words which don't look even
-                slightly believable.
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  fill="currentColor"
-                  className="absolute right-0 w-8 h-8 dark:text-violet-600"
-                >
-                  <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
-                  <path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
-                </svg>
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center p-8 rounded-b-lg dark:bg-violet-600 dark:text-gray-50">
-              <img
-                src="https://source.unsplash.com/50x50/?portrait?2"
-                alt=""
-                className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full dark:bg-gray-500 dark:bg-gray-300"
-              />
-              <p className="text-xl font-semibold leading-tight text-red-600">
-                Davide Warner Losse
-              </p>
-              <p className="text-sm uppercase">Businessman</p>
-            </div>
+          <div className="w-4/5 mx-auto my-5">
+            <Slider {...settings}>
+              {reviews.map((item, index) => (
+                <div key={index}>
+                  <div className="p-6 mb-4 rounded-lg border shadow-md h-[50%]">
+                    <div className="flex items-center justify-between">
+                      <div className="flex gap-4">
+                        <img
+                          className="w-16 h-16 rounded-full"
+                          src={item.image}
+                          alt={item.name}
+                        />
+                        <div className="text-left">
+                          <h1 className="text-xl font-semibold mb-1">
+                            {item.name}
+                          </h1>
+                          <p>{item.profession}</p>
+                        </div>
+                        <RiDoubleQuotesR className="text-4xl text-orange-400 ml-16" />
+                      </div>
+                    </div>
+                    <div className="text-left mt-3">
+                      <p className="text-lg text-gray-500">
+                        {item.description}
+                      </p>
+                      <Rating
+                        readonly
+                        initialRating={item.rating}
+                        emptySymbol="fa fa-star-o fa-1x"
+                        fullSymbol="fa fa-star fa-1x"
+                        className="text-orange-400 text-base my-2"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </section>
