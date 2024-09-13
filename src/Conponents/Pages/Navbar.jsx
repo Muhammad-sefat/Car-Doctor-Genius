@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { AuthContext } from "../AuthProvider";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -11,7 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const logOutBtn = () => {
     logOut().then(() => {
-      alert("Log Out SuccessFull");
+      toast("Log Out SuccessFull");
       navigate("/login");
 
       // data call

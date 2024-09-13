@@ -33,6 +33,7 @@ const Testimonial = () => {
           slidesToScroll: 3,
           infinite: true,
           dots: true,
+          arrows: true,
         },
       },
       {
@@ -57,7 +58,7 @@ const Testimonial = () => {
     <div>
       <section className="my-8 dark:bg-gray-100 dark:text-gray-800">
         <div className="container flex flex-col items-center mx-auto mb-12 md:p-10 md:px-12">
-          <h1 className="p-4 text-4xl font-semibold leading-none text-center">
+          <h1 className="p-4 text-3xl md:text-5xl font-bold leading-none text-center">
             What Customer Says
           </h1>
           <p className="p-5 md:w-[70%] mx-auto pb-5 text-gray-700 font-medium text-base">
