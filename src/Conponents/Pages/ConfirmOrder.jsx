@@ -1,12 +1,23 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider";
 import logo from "../../assets/images/checkout/checkout.png";
 import axios from "axios";
 import CommonSlide from "../CommonSlide";
+import { useLocation, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const ConfirmOrder = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+  const location = useLocation();
+  const { title, price, description, img } = location.state || {};
+  const navigation = useNavigate();
+  const [currentDate, setCurrentDate] = useState("");
+
+  useEffect(() => {
+    // Get current date in the format YYYY-MM-DD
+    const today = new Date().toISOString().split("T")[0];
+    setCurrentDate(today);
+  }, []);
 
   const handleBookingOrder = (e) => {
     e.preventDefault();
@@ -16,11 +27,13 @@ const ConfirmOrder = () => {
     const price = form.price.value;
     const date = form.date.value;
     const photo = form.photo.value;
-    const newBooking = { name, email, price, date, photo };
+    const newBooking = { name, email, price, date, photo, description };
+    console.log(newBooking);
 
     axios.post("http://localhost:5000/booking", { newBooking }).then((res) => {
       if (res.data.insertedId) {
-        alert("Order Successfull");
+        toast.success("Order Successfull");
+        navigation("/mybooking");
       }
     });
   };
@@ -49,8 +62,8 @@ const ConfirmOrder = () => {
                   id="name"
                   type="text"
                   name="name"
-                  placeholder="Your name"
-                  required
+                  defaultValue={title}
+                  readOnly
                   className="w-full p-2 border rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100"
                 />
               </div>
@@ -82,9 +95,9 @@ const ConfirmOrder = () => {
                 <input
                   id="price"
                   type="number"
-                  placeholder="price"
                   name="price"
-                  required
+                  defaultValue={price}
+                  readOnly
                   className="w-full border p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100"
                 />
               </div>
@@ -100,6 +113,8 @@ const ConfirmOrder = () => {
                   type="date"
                   name="date"
                   className="w-full border p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100"
+                  value={currentDate}
+                  readOnly
                 />
               </div>
             </div>
@@ -115,7 +130,8 @@ const ConfirmOrder = () => {
               type="text"
               id="text"
               name="photo"
-              placeholder="photo url"
+              defaultValue={img}
+              readOnly
             />
           </div>
           <div>

@@ -26,15 +26,14 @@ const ProductDetails = () => {
               >
                 Price : ${price}
               </a>
-              <Link to={"/confirmOrder"}>
+              <Link
+                to={"/confirmOrder"}
+                state={{ title, price, description, img }}
+              >
                 {" "}
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="px-8 py-3 text-lg bg-red-500 text-white font-semibold border rounded dark:border-gray-800"
-                >
+                <button className="px-8 py-3 text-lg bg-red-500 text-white font-semibold border rounded dark:border-gray-800">
                   Process Checkout
-                </a>
+                </button>
               </Link>
             </div>
           </div>

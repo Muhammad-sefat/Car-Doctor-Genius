@@ -4,7 +4,6 @@ import SingleProduct from "./Pages/SingleProduct";
 
 const PopularProduct = () => {
   const [datas, setDatas] = useState([]);
-  console.log(datas);
 
   useEffect(() => {
     const getData = async () => {
